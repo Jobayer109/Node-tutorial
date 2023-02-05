@@ -3,23 +3,26 @@ const { readFile } = require("fs");
 const PORT = 3000;
 const hostName = "127.0.0.1";
 
-const myServer = http.createServer((req, res) => {
-  const handleReadFile = (statusCode, fileLocation) => {
-    readFile(fileLocation, (err, data) => {
+const handleReadFile = (statusCode, fileLocation, req, res) => {
+  readFile(fileLocation, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
       res.writeHead(statusCode, { "Content-Type": "text/html" });
       res.write(data);
       res.end();
-    });
-  };
-
+    }
+  });
+};
+const myServer = http.createServer((req, res) => {
   if (req.url === "/") {
-    handleReadFile(200, "./views/index.html");
+    handleReadFile(200, "./views/index.html", req, res);
   } else if (req.url === "/about") {
-    handleReadFile(200, "./views/about.html");
+    handleReadFile(200, "./views/about.html", req, res);
   } else if (req.url === "/contact") {
-    handleReadFile(200, "./views/contact.html");
+    handleReadFile(200, "./views/contact.html", req, res);
   } else {
-    handleReadFile(404, "./views/error.html");
+    handleReadFile(404, "./views/error.html", req, res);
   }
 });
 
