@@ -3,15 +3,11 @@
     -> Custom Modules
     -> npm Modules
 
-2. Routes:
+2. Routes: response send
     -> file structure
+    -> HTTP Response (html and json data)
+    -> Cookies send
+    -> header send (by append)
 
-3. HTTP Response (html and json data):
-    ->  res.statusCode = 200;
-        res.sendFile(__dirname + "/views/index.html");
-    -> res.statusCode(200).json({
-        message: success
-        statusCode: 200
-    })
-
-4. Cookies
+3. Query parameter
+4. Route parameter
