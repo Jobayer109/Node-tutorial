@@ -1,0 +1,17 @@
+1. Modules:
+    -> Build in Modules
+    -> Custom Modules
+    -> npm Modules
+
+2. Routes:
+    -> file structure
+
+3. HTTP Response (html and json data):
+    ->  res.statusCode = 200;
+        res.sendFile(__dirname + "/views/index.html");
+    -> res.statusCode(200).json({
+        message: success
+        statusCode: 200
+    })
+
+4. Cookies
