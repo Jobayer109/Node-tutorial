@@ -12,6 +12,14 @@
 3. Query parameter
 4. Route parameter
 5. Regular express
+
 6. env
 7. Express Middleware
 8. Static middleware (important)
+
+9. MVC (Model views controller)
+    -> Model (Deals with database)
+    -> Views (what users see)
+    -> Routes
+    -> Controller (connection point between model and views)
+    -> Controller have all the logic
